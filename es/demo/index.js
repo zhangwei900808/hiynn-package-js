@@ -15,7 +15,9 @@ function (_Component) {
   _proto.render = function render() {
     return React.createElement("div", {
       className: "demo-container"
-    }, "this is demo page");
+    }, React.createElement("div", {
+      className: "demo-name"
+    }, "this is demo page"));
   };
 
   return Demo;
