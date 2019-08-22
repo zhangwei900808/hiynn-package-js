@@ -15,7 +15,7 @@ const distDir = path.join(process.cwd(), "dist");
 
 module.exports = {
   mode: "production",
-  entry: { name: "./components/index.js" },
+  entry: { [name]: "./components/index.js" },
   output: {
     // path: resolve("dist"), // 输出目录
     path: distDir,

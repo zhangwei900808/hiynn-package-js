@@ -6,9 +6,11 @@
   "module": "es/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:umd": "webpack --mode production --config scripts/webpack.config.umd.js",
-    "build:commonjs": "babel components -d lib --source-map",
-    "build:es": "babel components -d es --source-map"
+    "build:umd": "cross-env BABEL_ENV=umd webpack --mode production --config scripts/webpack.config.umd.js",
+    "build:commonjs": "rimraf lib && cross-env BABEL_ENV=commonjs babel components -d lib --source-map",
+    "build:es": "rimraf es && cross-env BABEL_ENV=es babel components -d es --source-map",
+    "build:css": "cd scripts && gulp compile",
+    "build:all": "yarn build:umd && yarn build:commonjs && yarn build:es && yarn build:css"
   },
   "repository": {
     "type": "git",
@@ -28,12 +30,18 @@
   "devDependencies": {
     "@babel/cli": "^7.5.5",
     "@babel/core": "^7.5.5",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-proposal-decorators": "^7.4.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.5.5",
     "@babel/plugin-transform-runtime": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
     "@babel/runtime": "^7.5.5",
+    "ansi-styles": "^4.1.0",
     "babel-loader": "^8.0.6",
+    "babel-plugin-import": "^1.12.0",
     "clean-webpack-plugin": "^3.0.0",
+    "cross-env": "^5.2.0",
     "fs": "^0.0.1-security",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.0",
@@ -49,6 +57,7 @@
     "path": "^0.12.7",
     "postcss-preset-env": "^6.7.0",
     "react": "^16.9.0",
+    "rimraf": "^3.0.0",
     "uglifyjs-webpack-plugin": "^2.2.0",
     "webpack": "^4.39.2",
     "webpack-cli": "^3.3.7",
