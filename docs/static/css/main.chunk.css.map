@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.pcss"],"names":[],"mappings":"AAAA,gBACI,cAAe,CACf,SAMJ,CAJI,2BACI,cAAe,CACf,WACJ","file":"main.chunk.css","sourcesContent":[".demo-container {\n    font-size: 24px;\n    color: red;\n\n    & .demo-name {\n        font-size: 36px;\n        color: green;\n    }\n}"]}

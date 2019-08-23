@@ -10,7 +10,10 @@
     "build:commonjs": "rimraf lib && cross-env BABEL_ENV=commonjs babel components -d lib --source-map",
     "build:es": "rimraf es && cross-env BABEL_ENV=es babel components -d es --source-map",
     "build:css": "cd scripts && gulp compile",
-    "build:all": "yarn build:umd && yarn build:commonjs && yarn build:es && yarn build:css"
+    "build:all": "yarn build:umd && yarn build:commonjs && yarn build:es && yarn build:css",
+    "start": "cross-env BABEL_ENV=preview webpack-dev-server --port 7007 --open --config scripts/webpack.config.dev.js",
+    "build:prod": "cross-env BABEL_ENV=preview webpack --mode production --config scripts/webpack.config.prod.js --source-map",
+    "deploy:docs": "yarn build:prod && gh-pages -d docs"
   },
   "repository": {
     "type": "git",
@@ -42,7 +45,9 @@
     "babel-plugin-import": "^1.12.0",
     "clean-webpack-plugin": "^3.0.0",
     "cross-env": "^5.2.0",
+    "css-loader": "^3.2.0",
     "fs": "^0.0.1-security",
+    "gh-pages": "^2.1.1",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.0",
     "gulp-clean-css": "^4.2.0",
@@ -52,15 +57,26 @@
     "gulp-rename": "^1.4.0",
     "gulp-replace": "^1.0.0",
     "gulp-sourcemaps": "^2.6.5",
+    "html-webpack-inline-source-plugin": "^0.0.10",
+    "html-webpack-plugin": "^3.2.0",
+    "inline-manifest-webpack-plugin": "^4.0.2",
     "mini-css-extract-plugin": "^0.8.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "path": "^0.12.7",
+    "postcss-apply": "^0.12.0",
+    "postcss-loader": "^3.0.0",
     "postcss-preset-env": "^6.7.0",
     "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-router": "^5.0.1",
+    "react-router-config": "^5.0.1",
+    "react-router-dom": "^5.0.1",
     "rimraf": "^3.0.0",
+    "style-loader": "^1.0.0",
     "uglifyjs-webpack-plugin": "^2.2.0",
     "webpack": "^4.39.2",
     "webpack-cli": "^3.3.7",
+    "webpack-dev-server": "^3.8.0",
     "webpack-node-externals": "^1.7.2"
   }
 }
