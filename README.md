@@ -3,8 +3,8 @@
 <div align="center">
 
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/zhangwei900808/hiynn-package-js)
-[![npm version](https://img.shields.io/npm/v/hiynn-design.svg)](https://www.npmjs.com/package/hiynn-package)
-[![NPM downloads](http://img.shields.io/npm/dm/hiynn-design.svg?style=flat-square)](http://npmjs.com/hiynn-package)
+[![npm version](https://img.shields.io/npm/v/hiynn-package.svg)](https://www.npmjs.com/package/hiynn-package)
+[![NPM downloads](http://img.shields.io/npm/dm/hiynn-package.svg?style=flat-square)](http://npmjs.com/hiynn-package)
 
 </div>
 
